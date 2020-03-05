@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { useReducer } from "react";
+import React,{ useContext,createContext,useReducer } from "react";
 
 const MyContext = createContext();
 const istate = {
@@ -14,11 +13,33 @@ const reducer = (state,action)=>{
             }
         default:
          return state
-
     }
 }
 
-const coder = ()=>{
+const Coder3 = ()=>{
+  const myName = useContext(MyContext);
+  return (
+      <div>
+          <h1>I am coder 3</h1>
+          <h2>{myName.name}</h2>
+      </div>
+  )
+
+}
+
+const Coder2 = ()=>{
+  const myName = useContext(MyContext);
+  return (
+      <div>
+          <h1>I am coder 2</h1>
+          <h2>{myName.name}</h2>
+          <button onClick={()=>myName.changeName({type:"CHANGE_NAME",payload:"Suresh"})}>let's change it</button>
+          <Coder3/>
+      </div>
+  )
+}
+
+const Coder = ()=>{
     const myName = useContext(MyContext);
     return (
         <div>
@@ -27,39 +48,19 @@ const coder = ()=>{
             <Coder2/>
         </div>
     )
-
 }
 
-const coder2 = ()=>{
-    const myName = useContext(MyContext);
-    return (
-        <div>
-            <h1>I am coder 2</h1>
-            <h2>{myName.name}</h2>
-            <button onClick={()=>myName.dispatch({type:"CHANGE_NAME",payload:"Suresh"})}>let's change it</button>
-            <Coder3/>
-        </div>
-    )
 
-}
-
-const coder3 = ()=>{
-    const myName = useContext(MyContext);
-    return (
-        <div>
-            <h1>I am coder 3</h1>
-            <h2>{myName.name}</h2>
-        </div>
-    )
-
-}
 function App(){
     const [data,dispatch] = useReducer(reducer,istate);
     return(
         <MyContext.Provider value={{name:data.name,changeName:dispatch}}>
             <div className="App">
                 <h1>coder's never quit</h1>
+                <Coder/>
             </div>
         </MyContext.Provider>
     )
 }
+
+export default App;
