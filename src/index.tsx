@@ -1,5 +1,5 @@
 import { createElement } from 'react';
 import { render } from 'react-dom';
-import { App } from './app/app';
+import { useLayoutEffectUse } from './useLayoutEffect/useLayoutEffect';
 
-render(<App />, document.getElementById('app'));
+render(<useLayoutEffectUse />, document.getElementById('app'));
