@@ -9,7 +9,7 @@ function App() {
 	return (
 		<div className="App">
 			<UserContext.Provider value={'Vishwas'}>
-        <ChannelContext.Provider value={'Codevolution'}>
+        		<ChannelContext.Provider value={'Codevolution'}>
 					<ComponentC />
 				</ChannelContext.Provider>
 			</UserContext.Provider>

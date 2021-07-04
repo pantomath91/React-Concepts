@@ -9,7 +9,7 @@ function ComponentF() {
 					return (
 						<ChannelContext.Consumer>
 							{channel => {
-                return <div>User context value {user}, channel context value {channel}</div>
+                				return <div>User context value {user}, channel context value {channel}</div>
 							}}
 						</ChannelContext.Consumer>
 					)
