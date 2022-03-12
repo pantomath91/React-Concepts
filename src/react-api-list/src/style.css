@@ -1,0 +1,23 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: space-between;
+  border-bottom: 2px solid red;
+}
+
+.list-border {
+  border-radius: 5px;
+  border-color: red;
+  border-width: 5px;
+  border-right: 2px solid red;
+}
+
+.width {
+  max-width: 60%;
+}
