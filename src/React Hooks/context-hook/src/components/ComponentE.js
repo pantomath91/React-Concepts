@@ -1,12 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ComponentF from './ComponentF'
 import { UserContext, ChannelContext } from '../App'
 
 function ComponentE() {
+  console.log('E');
+  const [name, setName] = useState('abhisek')
+  useEffect(() => {
+    setName('dfgdfg');
+  }, [])
 
-  const user = useContext(UserContext)
-  const channel = useContext(ChannelContext)
-  return <div> User is {user} and channel is {channel}</div>
+  console.log('F');
+  return (<ComponentF />)
 }
 
-export default ComponentE
+export default React.memo(ComponentE)

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 
-const ChildComponent = props => {
+export const ChildComponent = (props) => {
   console.log("CHILD RE_RENDER");
-  useEffect(() => {
-    props.fetchData("users");
-  }, [props]);
+  // useEffect(() => {
+  //   props.fetchData("users");
+  // }, [props]);
   return (
     <div>
       <h2>{props.title}</h2> <p>Child Component!</p>
@@ -12,4 +12,4 @@ const ChildComponent = props => {
   );
 };
 
-export default React.memo(ChildComponent);
+// export default React.memo(ChildComponent);

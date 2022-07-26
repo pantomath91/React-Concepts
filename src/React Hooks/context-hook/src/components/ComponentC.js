@@ -1,8 +1,7 @@
 import React from 'react'
 import ComponentE from './ComponentE'
 
-function ComponentC() {
+export const ComponentC = React.memo(() => {
+	console.log('C');
 	return <ComponentE />
-}
-
-export default ComponentC
+})
